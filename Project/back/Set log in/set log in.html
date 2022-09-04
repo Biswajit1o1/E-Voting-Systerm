@@ -1,0 +1,59 @@
+<?php
+	include("connection.php");
+	error_reporting(0);
+?>
+
+<html>
+	<head>
+		<title>Set New Username And Password</title>
+		<link rel="stylesheet" href="C:\xampp\htdocs\Project\Form A CSS\style.css" type="text/css">
+	</head>
+
+	<body>
+			<div class="main">
+			<div class="register">
+			<br><br>
+				<h2>Set New Username <br>And Password</h2>
+				<form id="register" method="post" action="C:\xampp\htdocs\Project\reg comp.html">
+				
+				<label>Username:</label>
+				<span style="padding-left:65px;">
+				<input type="text"name="fname"id="name" placeholder="Set Username">
+				<br><br>
+				
+				<label>Password:</label>
+				<span style="padding-left:69px;">
+				<input type="text"name="lname"id="name" placeholder="Set Password">
+				
+				<br><br><br><br>
+				<input type="submit"value="Submit"name="submit"id="submit">
+				
+				</form>
+			</div>
+			</div>
+	</body>
+</html>
+
+<?php
+
+if(isset($_POST['submit']))
+{
+	$vn=$_POST['voteno'];  
+
+	if($vn!="")
+	{
+	
+		$query="INSERT INTO VOTE VALUES ('$vn')";
+		$data=mysqli_query($conn,$query);
+		
+		if($query)
+		{
+		echo "data insearted into database";
+		}
+		else
+		{
+		echo "failed to insert data into database";
+		}
+	}
+}
+?>

@@ -1,0 +1,18 @@
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<button>Vote</button>
+		<span id='count'></span>
+		<script>
+		$button = document.querySelector('button')
+		$span = document.querySelector('span')
+		function increment()
+		{
+		$span.innerHTML++;
+		}
+		$button.addEventListener('click',increment);
+		</script>
+	</body>
+</html>
